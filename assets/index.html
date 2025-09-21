@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FraudLens | Real-Time Fraud Detection SDK & API for Mobile Banking</title>
+    <meta name="description" content="Protect your customers and reduce losses with FraudLens. Integrate our powerful SDK and AI-driven APIs into your mobile banking app for real-time transaction security.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="nav-logo">Fraud<span>Lens</span></a>
+            <ul class="nav-links">
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#api-docs">API Docs</a></li>
+                <li><a href="#integration">Integration</a></li>
+            </ul>
+            <a href="#contact" class="btn btn-secondary">Request a Demo</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1>Integrate Real-Time Fraud Detection Into Your Mobile App</h1>
+            <p class="subtitle">The developer-first security platform for mobile banking. Protect your customers, reduce financial loss, and secure every transaction with our powerful SDK and AI-driven APIs.</p>
+            <div class="cta-buttons">
+                <a href="#integration" class="btn btn-primary">Start Integrating</a>
+                <a href="#api-docs" class="btn btn-secondary">View Documentation</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- How It Works Section -->
+        <section id="how-it-works">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Simple Integration, Powerful Protection</h2>
+                    <p>Secure your platform in minutes. Our system works seamlessly in the background of your existing application.</p>
+                </div>
+                <div class="how-it-works-flow">
+                    <div class="flow-step">
+                        <div class="flow-number">1</div>
+                        <h3>Integrate SDK</h3>
+                        <p>Your developers integrate our lightweight mobile SDK into your iOS or Android banking app.</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="flow-number">2</div>
+                        <h3>Collect Data</h3>
+                        <p>When a user initiates a transaction, the SDK securely collects non-invasive data points (IP, location, device signals).</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="flow-number">3</div>
+                        <h3>Analyze Risk</h3>
+                        <p>The data is sent to our FraudLens API, where our ML model analyzes it in milliseconds and returns a risk score.</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="flow-number">4</div>
+                        <h3>Take Action</h3>
+                        <p>Your app receives the risk score. High-risk transactions can trigger a warning, step-up authentication, or a block.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Core Security Products</h2>
+                    <p>A complete suite to provide end-to-end fraud prevention for your business.</p>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="icon">📱</div>
+                        <h3>Mobile Security SDK</h3>
+                        <p>A lightweight, easy-to-integrate SDK for Android (Jetpack Compose/Kotlin) that gathers crucial device and transactional heuristics without compromising user experience or performance.</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="icon">⚙️</div>
+                        <h3>Fraud Detection API</h3>
+                        <p>The core of our platform. A high-performance FastAPI backend powered by a custom-trained ML model to deliver sub-second risk assessments for single or batch transactions.</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="icon">📊</div>
+                        <h3>Client Security Dashboard</h3>
+                        <p>A private, secure web dashboard (on your subdomain) for your security team. Monitor live alerts, review flagged cases, and analyze fraud trends and model performance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- API Docs Section -->
+        <section id="api-docs">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Developer-Friendly API</h2>
+                    <p>Integrate FraudLens's predictive power with our simple and robust REST API.</p>
+                </div>
+                <div class="api-layout">
+                    <nav class="api-nav">
+                        <h3>Endpoints</h3>
+                        <ul>
+                            <li><a href="#api-health">Health Check</a></li>
+                            <li><a href="#api-predict">Single Prediction</a></li>
+                            <li><a href="#api-predict-batch">Batch Prediction</a></li>
+                        </ul>
+                        <h3>Base URL</h3>
+                        <pre><code>https://api.fraudlens.com/v1</code></pre>
+                    </nav>
+                    <div class="api-content">
+                        <div id="api-health" class="api-endpoint">
+                            <h3>Health Check</h3>
+                            <p>Verify that the API service is up and running.</p>
+                            <div class="endpoint-meta">
+                                <span class="method get">GET</span>
+                                <span class="path">/health</span>
+                            </div>
+                            <h4>Example Response (200 OK)</h4>
+                            <pre><code>{ "status": "ok" }</code></pre>
+                        </div>
+
+                        <div id="api-predict" class="api-endpoint">
+                            <h3>Single Transaction Prediction</h3>
+                            <p>Submit a single transaction's data to receive a real-time fraud prediction.</p>
+                            <div class="endpoint-meta">
+                                <span class="method post">POST</span>
+                                <span class="path">/predict</span>
+                            </div>
+                            <h4>Request Body</h4>
+                            <pre><code>{
+    "transactionId": "txn_12345abc",
+    "amount": 1000,
+    "timestamp": "2025-07-04T23:00:00Z",
+    "payer": { "vpa": "user@bank", "ifsc": "BANK0001" },
+    "beneficiary": { "vpa": "receiver@otherbank", "ifsc": "OBNK0002" },
+    "device": { "ip": "203.0.113.1", "userCount": 1 },
+    "location": { "lat": 19.0760, "lon": 72.8777 }
+}</code></pre>
+                            <h4>Example Response (200 OK)</h4>
+                            <pre><code>{
+    "transactionId": "txn_12345abc",
+    "isFraud": false,
+    "riskScore": 0.05,
+    "riskLevel": "low",
+    "reasonCodes": ["IP_MATCH_LOCATION"]
+}</code></pre>
+                        </div>
+                        
+                        <div id="api-predict-batch" class="api-endpoint">
+                            <h3>Batch Transaction Prediction</h3>
+                            <p>Submit a list of transactions for asynchronous processing.</p>
+                            <div class="endpoint-meta">
+                                <span class="method post">POST</span>
+                                <span class="path">/predict/batch</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integration Section -->
+        <section id="integration" class="bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Start Integrating in 3 Steps</h2>
+                    <p>Go from signup to your first protected transaction in minutes.</p>
+                </div>
+                <div class="integration-steps">
+                    <div class="step-card">
+                        <h3>1. Get Your API Key</h3>
+                        <p>Sign up for a developer account and generate your unique API keys from the client dashboard.</p>
+                        <a href="#" class="btn btn-secondary">Sign Up</a>
+                    </div>
+                    <div class="step-card">
+                        <h3>2. Integrate the SDK</h3>
+                        <p>Follow our comprehensive documentation to add the FraudLens SDK to your mobile application project.</p>
+                        <a href="#" class="btn btn-secondary">Read SDK Docs</a>
+                    </div>
+                    <div class="step-card">
+                        <h3>3. Make Your First API Call</h3>
+                        <p>Use our Postman collection or code examples to test your integration and see the fraud engine in action.</p>
+                        <a href="#" class="btn btn-secondary">View Examples</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <h2>Ready to Secure Your Transactions?</h2>
+            <p>Talk to our team to get a personalized demo and learn how FraudLens can protect your business and your customers.</p>
+            <a href="mailto:sales@fraudlens.com" class="btn btn-primary">Request a Demo</a>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FraudLens by Team VNITx. All Rights Reserved.</p>
+                <p>Contact: <a href="mailto:arshan5446@gmail.com" class="contact-email">arshan5446@gmail.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
